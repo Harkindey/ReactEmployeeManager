@@ -5,7 +5,7 @@ import {
 } from './types';
 
 export const emailChanged = (text) => {
-  return{
+  return {
     type: EMAIL_CHANGED,
     payload: text
   };
@@ -19,9 +19,9 @@ export const passwordChanged = (text) => {
 };
 
 export const loginUser = ({ email, password }) => {
-    return  (dispatch) => {
-      firebase.auth().signInWithEmailAndPassword(email,password)
-      .then(user=> {
+    return (dispatch) => {
+      firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(user => {
         dispatch({ type: 'LOGIN_USER_SUCESS', payload: user });
       });
     };

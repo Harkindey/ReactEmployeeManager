@@ -9,18 +9,20 @@ class LoginForm extends Component {
   }
 
   onPasswordChange(text) {
+    console.log(this.props);
     this.props.passwordChanged(text);
   }
 
   onButtonPress() {
     const { email, password } = this.props;
-
+    console.log(this.props);
     this.props.loginUser({ email, password });
   }
 
   render() {
     return (
       <Card>
+
       <CardSection>
         <Input
           label="Email"
@@ -29,20 +31,23 @@ class LoginForm extends Component {
           value={this.props.email}
         />
       </CardSection>
+
       <CardSection>
       <Input
         secureTextEntry
         label="Password"
         placeholder="password"
-        onChangedText={this.onPasswordChange.bind(this)}
         value={this.props.password}
+        onChangeText={this.onPasswordChange.bind(this)}
       />
       </CardSection>
+
       <CardSection>
         <Button onPress={this.onButtonPress.bind(this)}>
           SIGN IN
         </Button>
       </CardSection>
+
       </Card>
     );
   }
