@@ -4,25 +4,24 @@ import { emailChanged, passwordChanged, loginUser } from '../actions';
 import { Card, CardSection, Input, Button } from './common';
 
 class LoginForm extends Component {
+
   onEmailChange(text) {
     this.props.emailChanged(text);
   }
 
   onPasswordChange(text) {
-    console.log(this.props);
     this.props.passwordChanged(text);
   }
 
   onButtonPress() {
+    console.log('bean');
     const { email, password } = this.props;
-    console.log(this.props);
     this.props.loginUser({ email, password });
   }
 
   render() {
     return (
       <Card>
-
       <CardSection>
         <Input
           label="Email"
@@ -43,7 +42,7 @@ class LoginForm extends Component {
       </CardSection>
 
       <CardSection>
-        <Button onPress={this.onButtonPress.bind(this)}>
+        <Button action={this.onButtonPress.bind(this)}>
           SIGN IN
         </Button>
       </CardSection>

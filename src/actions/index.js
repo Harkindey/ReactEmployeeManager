@@ -1,7 +1,8 @@
 import firebase from 'firebase';
 import {
   EMAIL_CHANGED,
-  PASSWORD_CHANGED
+  PASSWORD_CHANGED,
+  LOGIN_USER_SUCCESS
 } from './types';
 
 export const emailChanged = (text) => {
@@ -20,9 +21,16 @@ export const passwordChanged = (text) => {
 
 export const loginUser = ({ email, password }) => {
     return (dispatch) => {
+      console.log('bean');
       firebase.auth().signInWithEmailAndPassword(email, password)
       .then(user => {
-        dispatch({ type: 'LOGIN_USER_SUCESS', payload: user });
-      });
+        dispatch({ type: LOGIN_USER_SUCCESS, payload: user });
+      })
+      .catch(() => {
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then(user => {
+          dispatch({ type: LOGIN_USER_SUCCESS, payload: user });
+        });
+      }); 
     };
 };
