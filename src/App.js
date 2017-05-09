@@ -8,16 +8,15 @@ import Router from './Router.js';
 
 class App extends Component {
   componentWillMount() {
-    const config = {
-    apiKey: 'AIzaSyCKQnD-_WYt7Zpwgf-xw9xfguOClgWg-6Q',
-    authDomain: 'manager-c09f5.firebaseapp.com',
-    databaseURL: 'https://manager-c09f5.firebaseio.com',
-    projectId: 'manager-c09f5',
-    storageBucket: 'manager-c09f5.appspot.com',
-    messagingSenderId: '1096390103989'
-  };
-
-  firebase.initializeApp(config);
+        const config = {
+      apiKey: 'AIzaSyCKQnD-_WYt7Zpwgf-xw9xfguOClgWg-6Q',
+      authDomain: 'manager-c09f5.firebaseapp.com',
+      databaseURL: 'https://manager-c09f5.firebaseio.com',
+      projectId: 'manager-c09f5',
+      storageBucket: 'manager-c09f5.appspot.com',
+      messagingSenderId: '1096390103989'
+    };
+    firebase.initializeApp(config);
   }
 
 
