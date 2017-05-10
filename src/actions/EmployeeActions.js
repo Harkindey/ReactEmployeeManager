@@ -1,4 +1,4 @@
-imnport {
+import {
   EMPLOYEE_UPDATE
 } from './types';
 
