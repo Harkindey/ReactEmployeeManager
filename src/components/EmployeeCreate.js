@@ -28,24 +28,23 @@ class EmployeeCreate extends Component {
 
         <CardSection style={{ flexDirection: 'column' }}>
           <Text style={styles.pickerTextStyle}>Shift</Text>
-        </CardSection>
-        <CardSection>  
-            <Picker
-              style={{ flex: 1 }}
-              selectedValue={this.props.shift}
-              onValueChange={(value) => this.props.employeeUpdate({ prop: 'shift', value })}
-            >
-              <Picker.item label="Monday" value="Monday" />
-              <Picker.item label="Tuesday" value="Tuesday" />
-              <Picker.item label="Wednesday" value="Wednesday" />
-              <Picker.item label="Thursday" value="Thursday" />
-              <Picker.item label="Friday" value="Friday" />
-              <Picker.item label="Saturday" value="Saturday" />
-              <Picker.item label="Sunday" value="Sunday" />
-            </Picker>
+            <CardSection>
+                <Picker
+                  style={{ flex: 1 }}
+                  selectedValue={this.props.shift}
+                  onValueChange={(value) => this.props.employeeUpdate({ prop: 'shift', value })}
+                >
+                  <Picker.item label="Monday" value="Monday" />
+                  <Picker.item label="Tuesday" value="Tuesday" />
+                  <Picker.item label="Wednesday" value="Wednesday" />
+                  <Picker.item label="Thursday" value="Thursday" />
+                  <Picker.item label="Friday" value="Friday" />
+                  <Picker.item label="Saturday" value="Saturday" />
+                  <Picker.item label="Sunday" value="Sunday" />
+                </Picker>
 
+            </CardSection>
         </CardSection>
-
 
         <CardSection>
           <Button>
